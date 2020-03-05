@@ -1,0 +1,54 @@
+{
+  "name": "noticia",
+  "plural": "noticias",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "categoria": {
+      "type": "string",
+      "required": true
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "img": {
+      "type": "string"
+    },
+    "cuerpo": {
+      "type": "string"
+    },
+    "comentarios": {
+      "type": [
+        {
+          "numero": "number",
+          "nick": "string",
+          "cuerpo": "string",
+          "icono": "string",
+          "iduser": "string"
+        }
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "*"
+    }
+  ],
+  "methods": {}
+}
